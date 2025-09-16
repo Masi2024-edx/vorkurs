@@ -1,0 +1,92 @@
+body {
+  background-color: rgb(111, 153, 211);
+  color: azure;
+  font-family: "Julius Sans One", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+header{
+    position: sticky;
+    top:0;
+    background-color: rgb(111, 153, 211);
+    padding: 10px;
+}
+button{
+    background-color: rgb(1, 80, 148);
+    border: 2px solid rgb(81, 147, 205);
+    border-radius: 10px;
+    width: 120px;
+    height: 40px;
+
+    color:rgb(109, 156, 197);
+    font-size: larger;
+    font-family:"Julius Sans One", sans-serif;
+
+}
+
+h1{
+    font-size: 70px;
+    text-transform: uppercase;
+    text-align:center;
+    margin: 0px;
+    }
+
+h2{
+    font-size: 30px;
+    text-transform: uppercase;
+}
+h3{
+    font-size: 30px;
+}
+#collection{
+        position:sticky;
+        top: 26%;
+        background-color: rgb(111, 153, 211,0.9);
+    }
+
+
+section{
+    text-align: center;
+    margin: 20px;
+}
+.art{
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+#cake{
+    background-color: rgba(190, 131, 131, 0.5);
+}
+#cameras{
+    background-color: rgba(173, 131, 190, 0.5);
+}
+#clouds{
+    background-color: rgba(185, 98, 138, 0.5);
+}
+#head{
+    background-color: rgba(78, 184, 117, 0.5);
+}
+#tv{
+    background-color: rgba(180, 129, 66, 0.5);
+}
+@media only screen and (min-width: 560px){
+    #collection{
+        position:sticky;
+        top: 15%;
+        background-color: rgb(111, 153, 211,0.9);
+    }
+}
+@media only screen and (min-width: 700px){
+    .art{
+        width: 30%;
+        display:grid;
+        margin: 10px
+
+    }
+    section{
+        display: flex;
+        
+    }
+}
