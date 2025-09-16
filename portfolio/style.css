@@ -13,6 +13,11 @@ header{
     background-color: rgb(111, 153, 211);
     padding: 10px;
 }
+footer{
+    position:sticky;
+    bottom:0;
+    
+}
 button{
     background-color: rgb(1, 80, 148);
     border: 2px solid rgb(81, 147, 205);
@@ -23,7 +28,6 @@ button{
     color:rgb(109, 156, 197);
     font-size: larger;
     font-family:"Julius Sans One", sans-serif;
-
 }
 
 h1{
@@ -42,18 +46,21 @@ h3{
 }
 #collection{
         position:sticky;
-        top: 26%;
+        top: 24%;
         background-color: rgb(111, 153, 211,0.9);
     }
 
 
 section{
     text-align: center;
-    margin: 20px;
+    align-items: center;
+    margin: 15px;
 }
+
 .art{
-    width: 100%;
-    margin-bottom: 5px;
+    
+    margin-bottom: 10px;
+    
 }
 
 #cake{
@@ -78,15 +85,20 @@ section{
         background-color: rgb(111, 153, 211,0.9);
     }
 }
-@media only screen and (min-width: 700px){
+/*@media only screen and (min-width: 900px){
     .art{
-        width: 30%;
-        display:grid;
+        width:30%;
+        height: fit-content;
         margin: 10px
 
+
     }
-    section{
+    #artworks{
         display: flex;
+        flex-direction: row;
+
+        justify-items:baseline;
+
         
     }
-}
+}*/
