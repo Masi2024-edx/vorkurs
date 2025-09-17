@@ -4,37 +4,56 @@ body {
   font-family: "Julius Sans One", sans-serif;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 
 }
+
+
 header{
     position: sticky;
-    top:0;
-    background-color: rgb(111, 153, 211);
+    top:0px;
+    
     padding: 10px;
+}
+
+.main{
+    margin-top: 40px;
+
 }
 footer{
     position:sticky;
     bottom:0;
     
 }
-button{
-    background-color: rgb(1, 80, 148);
-    border: 2px solid rgb(81, 147, 205);
+#but{
+    background-color:azure;
+    border: 4px solid rgb(21, 81, 133);
     border-radius: 10px;
     width: 120px;
     height: 40px;
+    margin-top: 15px;
 
-    color:rgb(109, 156, 197);
+    color:rgb(21, 81, 133);
     font-size: larger;
     font-family:"Julius Sans One", sans-serif;
 }
-
+#but:hover{
+    background-color:rgb(21, 81, 133);
+    color: azure;
+}
+#but:active{
+    background-color: rgb(10, 59, 102);;
+}
 h1{
-    font-size: 70px;
+
+    font-size: 60px;
     text-transform: uppercase;
     text-align:center;
     margin: 0px;
+
+    background-color: rgb(111, 153, 211);
+    position: sticky;
+    top: 50px;
     }
 
 h2{
@@ -43,13 +62,25 @@ h2{
 }
 h3{
     font-size: 30px;
+    text-decoration:solid ;
 }
 #collection{
-        position:sticky;
-        top: 24%;
-        background-color: rgb(111, 153, 211,0.9);
+    
+    position:sticky;
+    top: 18%;
+    background-color: rgb(111, 153, 211,0.9);
+}
+#artworks{
+        margin-left: 7%;
+        margin-right: 7%;
     }
 
+#contact{
+    background-color: #4c5fc6;
+    color:rgb(109, 156, 197);
+    margin-bottom: 7%;
+    padding: 10px;
+}
 
 section{
     text-align: center;
@@ -59,12 +90,16 @@ section{
 
 .art{
     
-    margin-bottom: 10px;
+    margin-bottom: 7%;
+    padding-top: 20px;
+    padding-bottom: 20px;
     
 }
 
 #cake{
     background-color: rgba(190, 131, 131, 0.5);
+
+    
 }
 #cameras{
     background-color: rgba(173, 131, 190, 0.5);
@@ -78,27 +113,39 @@ section{
 #tv{
     background-color: rgba(180, 129, 66, 0.5);
 }
-@media only screen and (min-width: 560px){
-    #collection{
-        position:sticky;
-        top: 15%;
-        background-color: rgb(111, 153, 211,0.9);
-    }
+#house{
+    background-color: rgba(138, 118, 93, 0.5);
 }
-/*@media only screen and (min-width: 900px){
-    .art{
-        width:30%;
-        height: fit-content;
-        margin: 10px
+
+.topnav{
+    width: 100%;
+    height: 30px;
+    background-color: #4c5fc6;
+    position: fixed;
+    top: 0;
+    left:0;
+    margin: 0;
+    text-align: center;
+    padding-top: 15px;
+    
+}
+.topnav a{
+    text-decoration: none;
+    color:rgb(109, 156, 197);
+
+}
+.topnav a:hover{
+    color: #f1f1f1;
+}
 
 
+
+@media only screen and (min-width: 560px){
+    h1{
+        font-size: 70px;
     }
-    #artworks{
-        display: flex;
-        flex-direction: row;
-
-        justify-items:baseline;
-
-        
+    #collection{
+        top: 20%
     }
-}*/
+    
+}
