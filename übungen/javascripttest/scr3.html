@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test3</title>
+    <style>
+        body{
+            background-color: rgb(102, 83, 119);
+            color: beige;
+            justify-items: center;
+            font-family: "Arial";
+               
+        }
+        #lebensmittel_container{
+            background-color: blanchedalmond;
+            
+            /* umbrechen durch WRAP*/
+            display: flex;
+            flex-wrap: wrap;
+            /*justify-items: center;*/
+            padding: 10px;
+            margin: 10px;
+            
+        }
+        .item{
+            color:  rgb(102, 83, 119);
+            margin: 20px;
+            padding: 10px;
+            text-transform: uppercase ;
+        }
+    </style>
+    <script>
+        //Array:
+        let lebensmittel = ["Apfel","Banane","Kirschen","Joghurt", "Wurst", "Käse","Brot","Brokkoli"];
+        function render(){
+
+            //using a for loop to iterate through the array
+            /*for(let i = 0;i<lebensmittel.length;i++){
+                document.querySelector("#lebensmittel_container").innerHTML += `<div class="item">${lebensmittel[i]}</div>`
+            }*/
+
+            // Using Lambda function in map to iterate through it without for loop:
+           let lebensm = lebensmittel.map(item => `<div class = "item">${item}</div>`).join("");
+           document.querySelector("#lebensmittel_container").innerHTML = lebensm;
+
+        }
+        function sortieren_aufsteigend(){
+
+            lebensmittel.sort(); //sortieren in alphabetischer reihenfolge
+            render();  //aufrufen render funktion mit neuem array
+
+        }
+        function sortieren_absteigend(){
+
+            lebensmittel.sort().reverse(); //sortieren in alphabetischer reihenfolge
+            render();  //aufrufen render funktion mit neuem array
+
+        }
+
+    </script>
+</head>
+<!--onload event: execute javascript immediately after page has been loaded-->
+<body onload="render()">
+
+    <h1>TEST 3</h1>
+    <h2>Lebensmittel</h2>
+    <button onclick="sortieren_aufsteigend()">SORTIEREN A-Z</button>
+    <button onclick="sortieren_absteigend()">SORTIEREN Z-A</button>
+    <div id="lebensmittel_container"></div>
+    <div id="lebensmittel_container_sortiert"></div>
+ 
+</body>
+
+</html>
