@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>test3</title>
+    <style>
+        body{
+            background-color: rgb(102, 83, 119);
+            color: beige;
+            
+            justify-items: center;
+            font-family: "Arial";
+            text-transform: uppercase;
+        }
+       
+        #lebensmittel_container{
+            background-color: blanchedalmond;
+            
+            /* umbrechen durch WRAP*/
+            display: flex;
+            flex-wrap: wrap;
+            /*justify-items: center;*/
+            padding: 10px;
+            margin: 10px;
+            
+        }
+        .item{
+            color:  rgb(102, 83, 119);
+            margin: 20px;
+            padding: 10px;
+            text-transform: uppercase ;
+        }
+        #but{
+            background-color: blanchedalmond;
+            color:  rgb(102, 83, 119);
+            height: 30px;
+            width: 100px;
+            border: 3px thin rgb(56, 44, 66);
+            border-radius: 4px;
+
+        }
+    </style>
+    <script>
+        //Objekt, keys als Eigenschaften: 
+        let lebensmittel_a = [{bezeichnung: "Apfel",kategorie:"Obst",preis:0.30,anbieter:"Obsthof Mayer"},
+                                {bezeichnung: "Banane",kategorie:"Obst",preis:0.50,anbieter:"Obsthof Mayer"},
+                                {bezeichnung: "Karotten (1kg)",kategorie:"Gemüse",preis:0.30,anbieter:"Gemüsehof Schulz"},
+                                {bezeichnung: "Joghurt",kategorie:"Milchprodukte",preis:1.2,anbieter:"Molkerei Wiese"},
+                                {bezeichnung: "Wurst",kategorie:"Fleisch",preis:4.3,anbieter:"Metzgerei Kraag"}]
+
+        
+
+        function render(){
+
+            
+
+            // Using Lambda function in map to iterate through it without for loop:
+           let lebensm = lebensmittel_a.map(item => `<div class = "item"> <h4>${item.bezeichnung}</h4>
+                                                    <p>${item.kategorie}</p>
+                                                    <p>${item.preis} € </p>
+                                                    <p>${item.anbieter}</p>
+                                                    </div>`
+
+
+           ).join("");
+        
+           document.querySelector("#lebensmittel_container").innerHTML = `<div class = "item"> <h4>BEZEICHNUNG </h4>
+                                                                    <p>KATEGORIE </p>
+                                                                    <p>PREIS </p>
+                                                                    <p>ANBIETER </p>
+                                                                    </div>`
+
+           document.querySelector("#lebensmittel_container").innerHTML += lebensm;
+
+        }
+        function sortieren(){
+
+            lebensmittel_a.sort(item => item.bezeichnung).reverse(); //sortieren in alphabetischer reihenfolge
+            render();  //aufrufen render funktion mit neuem array
+
+        }
+      
+
+    </script>
+</head>
+<!--onload event: execute javascript immediately after page has been loaded-->
+<body onload="render()">
+    <section id = "top">
+        <h1>TEST 3</h1>
+        <h2>Lebensmittel</h2>
+        
+        <button id = "but" onclick="sortieren()">SORTIEREN</button>
+    </section>
+    <section>
+        <div id="lebensmittel_container"></div>
+        <div id="lebensmittel_container_sortiert"></div>
+    </section>
+</body>
+
+</html>
