@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>JavaScript Intro</title>
+        <style>
+            body{
+                background-color: #3434a3;
+                color: aliceblue;
+                font-size: 20px;
+            }
+        </style>
+        <script>
+            function init(){
+                console.log("Hallo Welt");
+            }
+            init()
+            let modus = "blue";
+            function changeColors(){
+                
+                
+                const buttons = document.querySelectorAll(".buttons");
+                if(modus=="blue"){
+                    document.querySelector("body").style.backgroundColor="black";
+                    document.querySelector("body").style.color="white";
+                    document.querySelector("body").style.fontFamily="New York Times";
+                    for (let i = 0; i< buttons.length;i++){
+                        buttons[i].style.backgroundColor = "green";
+                    }
+
+
+
+                    modus = "black";
+                }else{
+                    document.querySelector("body").style.backgroundColor="rgb(52, 52, 163)";
+                    document.querySelector("body").style.color="aliceblue";
+                    document.querySelector("body").style.fontFamily="Arial";
+                    modus = "blue";
+                    for (let i = 0; i< buttons.length;i++){
+                        buttons[i].style.backgroundColor = "blue";
+                    }
+                } 
+            }
+          
+            function zoomIn(){
+                document.querySelector("body").style.fontSize = "70px";
+            }
+            function zoomOut(){
+                document.querySelector("body").style.fontSize = "20px";
+            }
+        </script>
+    </head>
+
+    <body>
+        <h1>Test</h1>
+        <button class ="buttons" id="black" onclick="changeColors()" >BLACK</button>
+        <button class ="buttons" id="blue" onclick="changeColors()" >BLUE</button>
+        <button class ="buttons" id="zoomin" onclick="zoomIn()" >Zoom in</button>
+        <button class ="buttons" id="zoomout" onclick="zoomOut()" >Zoom out</button>
+
+
+    </body>
+</html>

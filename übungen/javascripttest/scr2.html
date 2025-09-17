@@ -1,0 +1,26 @@
+<!DOCTYPE HTML >
+<HTML>
+   <HEAD>
+      <TITLE>Test 2</TITLE>
+      <style>
+
+      </style>
+      <script>
+        let hauptstadt = "Berlin";
+        function zeigeAntwort(){
+
+            //document.querySelector("#antwort").innerHTML = "<p>" + hauptstadt +"</p>";
+            document.querySelector("#antwort").innerHTML = `<p>${hauptstadt}</p>`;
+
+        }
+      </script>
+   </HEAD>
+   <BODY>
+        <h1>JavaScript Intro 2</h1>
+        <p>Wie heißt die Hauptstadt von Deutschland?</p>
+        <button onclick="zeigeAntwort()">Lösung anzeigen</button>
+
+        <div id="antwort"> </div>
+
+   </BODY>
+</HTML>
