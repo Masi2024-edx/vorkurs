@@ -29,7 +29,7 @@
             padding: 10px;
             text-transform: uppercase ;
         }
-        #but{
+        .but{
             background-color: blanchedalmond;
             color:  rgb(102, 83, 119);
             height: 30px;
@@ -49,12 +49,9 @@
 
         
 
-        function render(){
-
-            
-
+        function render(lebensmittel_array){
             // Using Lambda function in map to iterate through it without for loop:
-           let lebensm = lebensmittel_a.map(item => `<div class = "item"> <h4>${item.bezeichnung}</h4>
+           let lebensm = lebensmittel_array.map(item => `<div class = "item"> <h4>${item.bezeichnung}</h4>
                                                     <p>${item.kategorie}</p>
                                                     <p>${item.preis} € </p>
                                                     <p>${item.anbieter}</p>
@@ -72,23 +69,59 @@
            document.querySelector("#lebensmittel_container").innerHTML += lebensm;
 
         }
+        function render_alle(){
+            render(lebensmittel_a);
+        }
+
         function sortieren(){
 
-            lebensmittel_a.sort(item => item.bezeichnung).reverse(); //sortieren in alphabetischer reihenfolge
-            render();  //aufrufen render funktion mit neuem array
+            lebensmittel_sort = lebensmittel_a.sort(item => item.bezeichnung).reverse(); //sortieren in alphabetischer reihenfolge
+            render(lebensmittel_sort);  //aufrufen render funktion mit neuem array
 
         }
-      
+        function filter_kategorie(){
+            function get_value(){
+                return document.querySelector("#select").value;
+            }
+            val = get_value()
+
+            if (val == "Alle"){
+                render(lebensmittel_a);
+                return;
+            }
+            let lebensmittel_f = lebensmittel_a.filter(product => product.kategorie == val);
+            render(lebensmittel_f);
+        }
+
+        window.onload = function(){
+            render(lebensmittel_a);
+        }
+
+        
 
     </script>
 </head>
 <!--onload event: execute javascript immediately after page has been loaded-->
-<body onload="render()">
+<body>
     <section id = "top">
         <h1>TEST 3</h1>
         <h2>Lebensmittel</h2>
         
-        <button id = "but" onclick="sortieren()">SORTIEREN</button>
+        
+        <select onchange="filter_kategorie()" name="kategorien" id="select">
+            <option value="Alle">Alles anzeigen</option>
+            <option value="Obst">Obst</option>
+            <option value="Gemüse">Gemüse</option>
+            <option value="Milchprodukte">Milchprodukte</option>
+            <option value="Fleisch">Fleisch</option>
+        </select>
+
+        <button class = "but" onclick="sortieren()">A-Z / Z-A</button>
+       
+        <!--<button class = "but" onclick="filter_kategorie('Obst')"> OBST</button>
+        <button class = "but" onclick="filter_kategorie('Gemüse')"> GEMÜSE</button>-->
+
+
     </section>
     <section>
         <div id="lebensmittel_container"></div>
