@@ -132,6 +132,13 @@ section{
     padding-bottom: 20px;
     
 }
+img{
+    border: 2px solid rgb(111, 153, 211);
+}
+.h3_art{
+    background-color: rgb(88, 123, 172);
+    padding: 20px;
+}
 #cakes{
     background-color: rgba(190, 131, 131, 0.5);  
 }

@@ -36,7 +36,6 @@
                             img2: "artw/house2.png",
                             img3: "artw/house3.png"},
                         ]
-        
 
         function render(artwork){
             let str = "";
@@ -44,15 +43,15 @@
             for(let i=0;i<artwork.length;i++){
                 if (artwork[i].img2 != ""){
                     str += `<div id="${artwork[i].kategorie}" class="art">
-                                <h3>${artwork[i].kategorie}</h3>
+                                <h3 class = "h3_art" >${artwork[i].kategorie}</h3>
                                 <img src="${artwork[i].img1}" alt="${artwork[i].kategorie}" width="30%"> 
                                 <img src="${artwork[i].img2}" alt="${artwork[i].kategorie}" width="30%"> 
                                 <img src="${artwork[i].img3}" alt="${artwork[i].kategorie}" width="30%"> 
                             </div>`;
                 }else{
                     str += `<div id="${artwork[i].kategorie}" class="art">
-                                <h3>${artwork[i].kategorie}</h3>
-                                <img src="${artwork[i].img1}" alt="${artwork[i].kategorie}" width="100%"> 
+                                <h3 class = "h3_art">${artwork[i].kategorie}</h3>
+                                <img src="${artwork[i].img1}" alt="${artwork[i].kategorie}" width="92%"> 
                             </div>`;
                 }
                 document.querySelector("#artworks").innerHTML = str;
