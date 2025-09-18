@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<body>
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Faculty+Glyphic&family=Michroma&display=swap" rel="stylesheet">
+    <link rel="stylesheet"href="style_c.css">
+    <script>
+
+        let artworks = [{kategorie: "cakes", 
+                            img1: "artw/cake1.png",
+                            img2: "artw/cake2.png",
+                            img3: "artw/cake3.png"},
+                            {kategorie: "cameras",
+                            img1: "artw/cameras.png",
+                            img2: "",
+                            img3: "",},
+                            {kategorie: "clouds",
+                            img1: "artw/cloud1.png",
+                            img2: "artw/cloud2.png",
+                            img3: "artw/cloud3.png"},
+                            {kategorie: "characters",
+                            img1: "artw/head1.png",
+                            img2: "artw/head2.png",
+                            img3: "artw/head3.png"},
+                            {kategorie: "television",
+                            img1: "artw/tv1.png",
+                            img2: "artw/tv2.png",
+                            img3: "artw/tv3.png"},
+                            {kategorie: "houses",
+                            img1: "artw/house1.png",
+                            img2: "artw/house2.png",
+                            img3: "artw/house3.png"},
+                        ]
+        
+
+        function render(artwork){
+            let str = "";
+
+            for(let i=0;i<artwork.length;i++){
+                if (artwork[i].img2 != ""){
+                    str += `<div id="${artwork[i].kategorie}" class="art">
+                                <h3>${artwork[i].kategorie}</h3>
+                                <img src="${artwork[i].img1}" alt="${artwork[i].kategorie}" width="30%"> 
+                                <img src="${artwork[i].img2}" alt="${artwork[i].kategorie}" width="30%"> 
+                                <img src="${artwork[i].img3}" alt="${artwork[i].kategorie}" width="30%"> 
+                            </div>`;
+                }else{
+                    str += `<div id="${artwork[i].kategorie}" class="art">
+                                <h3>${artwork[i].kategorie}</h3>
+                                <img src="${artwork[i].img1}" alt="${artwork[i].kategorie}" width="100%"> 
+                            </div>`;
+                }
+                document.querySelector("#artworks").innerHTML = str;
+            };
+        }
+
+        function filter_art(){
+            
+            let b_value = document.querySelector("#art_select").value;
+
+            if (b_value == "all"){
+                render(artworks);
+                return;
+            }else{
+                let artw_f = artworks.filter(item => item.kategorie == b_value);
+                render(artw_f);
+            }
+        }
+        window.onload = function render_stuff(){
+            render(artworks);
+        }
+    </script>
+
+</head>
+
+ <header>
+    <div class="topnav">
+        <nav>  
+            <a href="#top">Link to Pixabay | </a>
+            <a href="#collection">Artworks | </a>  
+            <a href="#contact">Contacts</a>
+        </nav>
+    </div>
+</header>
+<div class="main">
+    <h1>Art by Pikurā</h1>
+    
+
+    <section id="collection">
+        
+        <h2>Collection of Artwork</h2>
+        
+        
+    </section>
+    <section id = "sec_select">
+        <p>*Beispielhaftes Portfolio (nicht mein eigenes)*</p>
+
+        <select onchange = "filter_art()" name="art" id="art_select">
+            <option value="all">show all</option>
+            <option value="cakes">cakes</option>
+            <option value="cameras">cameras</option>
+            <option value="clouds">clouds</option>
+            <option value="characters">characters</option>
+            <option value="television">television</option>
+            <option value="houses">houses</option>
+        </select>
+    </section>
+
+    <section>
+        <div id="artworks"></div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact me</h2>
+        <p>E-mail: #filler</p>
+        <a href="https://pixabay.com/de/users/17746921/?tab=all&order=latest&pagi=5" target="_blank"><button id="but" type="button">Pixabay</button></a>
+        <p>other contacts</p>
+        <p>other contacts</p>
+
+    </section>
+    <footer> <p>pikurā 2025</p> </footer>
+
+</div>
+</body>
+
+</html>
